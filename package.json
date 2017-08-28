@@ -20,7 +20,7 @@
     "contributes": {
         "commands": [{
             "command": "svgo.pretty",
-            "title": "SVGO: Pretty SVG file"
+            "title": "SVGO: Prettify SVG file"
         },
         {
             "command": "svgo.minify",

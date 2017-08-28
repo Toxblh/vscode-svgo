@@ -19,27 +19,27 @@
     "main": "./extension",
     "contributes": {
         "commands": [{
-            "command": "extension.pretty",
+            "command": "svgo.pretty",
             "title": "SVGO: Pretty SVG file"
         },
         {
-            "command": "extension.minify",
+            "command": "svgo.minify",
             "title": "SVGO: Minify SVG file"
-        }]
-    },
-    "menus": {
-        "explorer/context": [
-            {
-                "command": "extension.pretty",
-                "group": "extension",
-                "when": "resourceLangId  == xml"
-            },
-            {
-                "command": "extension.minify",
-                "group": "extension",
-                "when": "resourceLangId  == xml"
-            }
-        ]
+        }],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "svgo.pretty",
+                    "group": "svgoGroup",
+                    "when": "resourceLangId  == xml"
+                },
+                {
+                    "command": "svgo.minify",
+                    "group": "svgoGroup",
+                    "when": "resourceLangId  == xml"
+                }
+            ]
+        }
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install",

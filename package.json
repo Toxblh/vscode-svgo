@@ -1,0 +1,60 @@
+{
+    "name": "svgo",
+    "displayName": "SVGO",
+    "description": "SVG optimize",
+    "version": "0.0.1",
+    "publisher": "toxblh",
+    "engines": {
+        "vscode": "^1.15.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:svg",
+        "onLanguage:xml",
+        "onCommand:svgo.pretty",
+        "onCommand:svgo.minify"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [{
+            "command": "extension.pretty",
+            "title": "SVGO: Pretty SVG file"
+        },
+        {
+            "command": "extension.minify",
+            "title": "SVGO: Minify SVG file"
+        }]
+    },
+    "menus": {
+        "explorer/context": [
+            {
+                "command": "extension.pretty",
+                "group": "extension",
+                "when": "resourceLangId  == xml"
+            },
+            {
+                "command": "extension.minify",
+                "group": "extension",
+                "when": "resourceLangId  == xml"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/toxblh/vscode-svgo.git"
+    },
+    "devDependencies": {
+        "typescript": "^2.0.3",
+        "vscode": "^1.0.0",
+        "mocha": "^2.3.3",
+        "eslint": "^3.6.0",
+        "@types/node": "^6.0.40",
+        "@types/mocha": "^2.2.32"
+    }
+}
